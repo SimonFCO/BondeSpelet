@@ -69,7 +69,7 @@ namespace BondeSpelet
             {
                 Random rnd = new Random();
                 string[] names = { "Bob", "Rutger", "Sten", "Bengt", "Stefan", "Olof" };
-                string name = names[rnd.Next(1, 7)];
+                string name = names[rnd.Next(0, 6)];
                 Player player = new Player(name, false);
                 Game.PlayerList.Add(player);
                 Menu.PlayerSuccesfullyCreated(name);

@@ -64,6 +64,11 @@ namespace BondeSpelet
             MenuLogic.PrintPlayerNameTurnLogic(player);
         }
 
+        public static void CardAnimation(string Season)
+        {
+            Console.WriteLine("You Got a Card! (Card Animation WIP)");
+        }
+
         public static void DiceAnimation(int result)
         {
             Console.Clear();
@@ -76,7 +81,7 @@ namespace BondeSpelet
             Console.WriteLine("# # # # #\r\n# * # # #\r\n# # * # #\r\n# # # * #\r\n# # # # #");
             Thread.Sleep(500);
             Console.Clear();
-            Console.WriteLine("# # # # #\r\n# * # *# \r\n# # # # #\r\n# * # * #\r\n# # # # #");
+            Console.WriteLine("# # # # #\r\n# * # * #\r\n# # # # #\r\n# * # * #\r\n# # # # #");
             Thread.Sleep(500);
             Console.Clear();
             Console.WriteLine("# # # # #\r\n# * # * #\r\n# # * # #\r\n# * # * #\r\n# # # # #");
@@ -98,7 +103,7 @@ namespace BondeSpelet
                     Console.WriteLine("# # # # #\r\n# * # # #\r\n# # * # #\r\n# # # * #\r\n# # # # #");
                     break;
                 case 4:
-                    Console.WriteLine("# # # # #\r\n# * # *# \r\n# # # # #\r\n# * # * #\r\n# # # # #");
+                    Console.WriteLine("# # # # #\r\n# * # * #\r\n# # # # #\r\n# * # * #\r\n# # # # #");
                     break;
                 case 5:
                     Console.WriteLine("# # # # #\r\n# * # * #\r\n# # * # #\r\n# * # * #\r\n# # # # #");

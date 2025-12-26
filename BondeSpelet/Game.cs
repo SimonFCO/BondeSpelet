@@ -21,7 +21,9 @@ namespace BondeSpelet
             {
                 Menu.PrintAllPlayersStats();
                 Menu.PrintPlayerNameTurn(PlayerList[playersTurn]);
-                if(playersTurn < PlayerList.Count-1)
+                CheckBoardEvents(PlayerList[playersTurn]);
+
+                if (playersTurn < PlayerList.Count-1)
                 {
                     playersTurn += 1;
                 }
@@ -36,7 +38,19 @@ namespace BondeSpelet
         {
             switch (player.BoardSpot)
             {
-                case 0:
+                case 1:
+                    Cards.DrawSpringCard(player);
+                    break;
+                case 4:
+                    Cards.DrawSpringCard(player);
+                    break;
+                case 12:
+                    Cards.DrawSpringCard(player);
+                    break;
+                case 18:
+                    Cards.DrawSpringCard(player);
+                    break;
+                case 24:
                     Cards.DrawSpringCard(player);
                     break;
             }

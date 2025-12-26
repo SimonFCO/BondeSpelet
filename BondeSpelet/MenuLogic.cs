@@ -8,19 +8,21 @@ namespace BondeSpelet
 {
     internal class MenuLogic
     {
-        Random rnd = new Random();
-        int[] GreenDice = { 1, 1, 1, 2, 2, 3 };
-        public int RoleDiceInput(bool isGreen)
+
+        public static int RoleDiceInput(bool isGreen)
         {
+            Random rnd = new Random();
+            int[] GreenDice = { 1, 1, 1, 2, 2, 3 };
             int DiceResult = 0;
             if (isGreen)
             {
-                DiceResult = rnd.Next(0, 6);
+                DiceResult = rnd.Next(1, 7);
                 DiceResult = GreenDice[DiceResult];
             }
             else
             {
-                DiceResult = rnd.Next(0, 6);
+                DiceResult = rnd.Next(1, 7);
+                Menu.DiceAnimation(DiceResult);
             }
             return DiceResult;
         }
@@ -31,7 +33,7 @@ namespace BondeSpelet
             {
                 Console.Clear();
                 Menu.PickPlayerAmmount();
-                Game.AmmountOfPlayers = Utilities.GetUserNumber(0, 6);
+                Game.AmmountOfPlayers = Utilities.GetUserNumber(1, 7);
                 Console.Clear();
 
                 for(int i = 0; i< Game.AmmountOfPlayers; i++)
@@ -48,7 +50,7 @@ namespace BondeSpelet
         public static void CreatePlayerLogic()
         {
             Menu.CreatePlayer(1);
-            int answer = Utilities.GetUserNumber(0,2);
+            int answer = Utilities.GetUserNumber(1,3);
             Console.Clear();
 
             if (answer == 1) // Real player
@@ -67,11 +69,11 @@ namespace BondeSpelet
             {
                 Random rnd = new Random();
                 string[] names = { "Bob", "Rutger", "Sten", "Bengt", "Stefan", "Olof" };
-                string name = names[rnd.Next(0, 6)];
+                string name = names[rnd.Next(1, 7)];
                 Player player = new Player(name, false);
                 Game.PlayerList.Add(player);
                 Menu.PlayerSuccesfullyCreated(name);
-                Thread.Sleep(1500);
+                Thread.Sleep(1000);
                 Console.Clear();
             }
         }
@@ -81,6 +83,25 @@ namespace BondeSpelet
             for(int i = 0; i < Game.PlayerList.Count; i++)
             {
                 Console.WriteLine($"{Game.PlayerList[i].Name,-25} {Game.PlayerList[i].BoardSpot,-22} {Game.PlayerList[i].Balance,-19} {Game.PlayerList[i].FarmLevel,-16} {Game.PlayerList[i].ForestValue,-13} {Game.PlayerList[i].AnimalAmmount,-10}");
+            }
+        }
+
+        public static void PrintPlayerNameTurnLogic(Player player)
+        {
+            int answer = Utilities.GetUserNumber(1, 5);
+            switch (answer)
+            {
+                case 1:
+                    int DiceResult = RoleDiceInput(false);
+                    Console.WriteLine($"{player.Name} moved {DiceResult} spots on the board");
+                    player.BoardSpot += DiceResult;
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
             }
         }
     }

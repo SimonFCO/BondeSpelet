@@ -53,5 +53,64 @@ namespace BondeSpelet
         {
 
         }
+
+        public static void PrintPlayerNameTurn(Player player)
+        {
+            Console.WriteLine($"It is {player.Name} turn, please pick a option!");
+            Console.WriteLine($"[1]: Roll Dice");
+            Console.WriteLine($"[2]: Buy Forest");
+            Console.WriteLine($"[3]: Sell Forest");
+            Console.WriteLine($"[4]: Send Money");
+            MenuLogic.PrintPlayerNameTurnLogic(player);
+        }
+
+        public static void DiceAnimation(int result)
+        {
+            Console.Clear();
+            Console.WriteLine("# # # # #\r\n# # # # #\r\n# # * # #\r\n# # # # #\r\n# # # # #");
+            Thread.Sleep(500);
+            Console.Clear();
+            Console.WriteLine("# # # # #\r\n# # * # #\r\n# # # # #\r\n# # * # #\r\n# # # # #");
+            Thread.Sleep(500);
+            Console.Clear();
+            Console.WriteLine("# # # # #\r\n# * # # #\r\n# # * # #\r\n# # # * #\r\n# # # # #");
+            Thread.Sleep(500);
+            Console.Clear();
+            Console.WriteLine("# # # # #\r\n# * # *# \r\n# # # # #\r\n# * # * #\r\n# # # # #");
+            Thread.Sleep(500);
+            Console.Clear();
+            Console.WriteLine("# # # # #\r\n# * # * #\r\n# # * # #\r\n# * # * #\r\n# # # # #");
+            Thread.Sleep(500);
+            Console.Clear();
+            Console.WriteLine("# # # # #\r\n# * # * #\r\n# * # * #\r\n# * # * #\r\n# # # # #");
+            Thread.Sleep(500);
+            Console.Clear();
+            Console.WriteLine($"You got {result}");
+            switch (result)
+            {
+                case 1:
+                    Console.WriteLine("# # # # #\r\n# # # # #\r\n# # * # #\r\n# # # # #\r\n# # # # #");
+                    break;
+                case 2:
+                    Console.WriteLine("# # # # #\r\n# # * # #\r\n# # # # #\r\n# # * # #\r\n# # # # #");
+                    break;
+                case 3:
+                    Console.WriteLine("# # # # #\r\n# * # # #\r\n# # * # #\r\n# # # * #\r\n# # # # #");
+                    break;
+                case 4:
+                    Console.WriteLine("# # # # #\r\n# * # *# \r\n# # # # #\r\n# * # * #\r\n# # # # #");
+                    break;
+                case 5:
+                    Console.WriteLine("# # # # #\r\n# * # * #\r\n# # * # #\r\n# * # * #\r\n# # # # #");
+                    break;
+                case 6:
+                    Console.WriteLine("# # # # #\r\n# * # * #\r\n# * # * #\r\n# * # * #\r\n# # # # #");
+                    break;
+            }
+            Thread.Sleep(1000);
+            Console.Clear();
+
+
+        }
     }
 }

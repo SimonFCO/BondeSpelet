@@ -13,6 +13,7 @@ namespace BondeSpelet
             Menu.Ascii();
             Menu.StartMenu();
             MenuLogic.StartMenuLogic();
+            Menu.PrintAllPlayersStats();
         }
 
         public static void CheckBoardEvents(Player player)

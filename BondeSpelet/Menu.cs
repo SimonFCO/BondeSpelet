@@ -22,11 +22,6 @@ namespace BondeSpelet
             Console.WriteLine("How many players should there be?");
         }
 
-        public static void RoleDice()
-        {
-
-        }
-
         public static void CreatePlayer(int step)
         {
             if (step == 1)
@@ -44,6 +39,19 @@ namespace BondeSpelet
         public static void PlayerSuccesfullyCreated(string name)
         {
             Console.WriteLine($"New Player {name} Has been successfully added to the game");
+        }
+
+        public static void PrintAllPlayersStats()
+        {
+            Console.Clear();
+            Console.WriteLine($"{"Name",-25} {"BoardSpot",-22} {"Money",-19} {"FarmLvl",-16} {"ForestValue",-13} {"AnimalLvl",-10}");
+            Console.WriteLine("--------------------------------------------------------------------------------------------------------------");
+            MenuLogic.PrintOutPlayerStatsLogic();
+            Console.WriteLine("--------------------------------------------------------------------------------------------------------------");
+        }
+        public static void RoleDice()
+        {
+
         }
     }
 }

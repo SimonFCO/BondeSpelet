@@ -75,5 +75,13 @@ namespace BondeSpelet
                 Console.Clear();
             }
         }
+
+        public static void PrintOutPlayerStatsLogic()
+        {
+            for(int i = 0; i < Game.PlayerList.Count; i++)
+            {
+                Console.WriteLine($"{Game.PlayerList[i].Name,-25} {Game.PlayerList[i].BoardSpot,-22} {Game.PlayerList[i].Balance,-19} {Game.PlayerList[i].FarmLevel,-16} {Game.PlayerList[i].ForestValue,-13} {Game.PlayerList[i].AnimalAmmount,-10}");
+            }
+        }
     }
 }

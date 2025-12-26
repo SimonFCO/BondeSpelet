@@ -20,6 +20,13 @@ namespace BondeSpelet
         {
             this.Name = name;
             this.IsCPU = isCpu;
+            this.FarmLevel = farmLevel;
+            this.Balance = balance;
+            this.InsuranceLevel = insuranceLevel;
+            this.ForestAmmount = forestAmmount;
+            this.ForestValue = forestValue;
+            this.AnimalAmmount = animalAmmount;
+            this.BoardSpot = boardspot;
         } 
 
         void CreateRealPlayer()

@@ -8,9 +8,10 @@ namespace BondeSpelet
     {
         Random rnd = new Random();
         int PickedCard = 0;
-        public void DrawSpringCard(Player player)
+        public static void DrawSpringCard(Player player)
         {
-            PickedCard = rnd.Next(0,10);
+            Random rnd = new Random();
+            int PickedCard = rnd.Next(0,10);
             switch (PickedCard)
             {
                 case 0:

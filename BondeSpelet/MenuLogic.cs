@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Xml.Linq;
 
 namespace BondeSpelet
 {
@@ -21,6 +23,57 @@ namespace BondeSpelet
                 DiceResult = rnd.Next(0, 6);
             }
             return DiceResult;
+        }
+        public static void StartMenuLogic()
+        {
+            int answer = Utilities.GetUserNumber(0, 2);
+            if (answer == 1) // Play
+            {
+                Console.Clear();
+                Menu.PickPlayerAmmount();
+                Game.AmmountOfPlayers = Utilities.GetUserNumber(0, 6);
+                Console.Clear();
+
+                for(int i = 0; i< Game.AmmountOfPlayers; i++)
+                {
+                    CreatePlayerLogic();
+                }
+            }
+            else // Quit
+            {
+                Console.WriteLine("Goodbye!");
+                Thread.Sleep(1500);
+            }
+        }
+        public static void CreatePlayerLogic()
+        {
+            Menu.CreatePlayer(1);
+            int answer = Utilities.GetUserNumber(0,2);
+            Console.Clear();
+
+            if (answer == 1) // Real player
+            {
+                Menu.CreatePlayer(2);
+                string name = Console.ReadLine();
+                Player player = new Player(name, false);
+                Game.PlayerList.Add(player);
+                Menu.PlayerSuccesfullyCreated(name);
+                Thread.Sleep(1500);
+                Console.Clear();
+
+
+            }
+            else // Computer Creation
+            {
+                Random rnd = new Random();
+                string[] names = { "Bob", "Rutger", "Sten", "Bengt", "Stefan", "Olof" };
+                string name = names[rnd.Next(0, 6)];
+                Player player = new Player(name, false);
+                Game.PlayerList.Add(player);
+                Menu.PlayerSuccesfullyCreated(name);
+                Thread.Sleep(1500);
+                Console.Clear();
+            }
         }
     }
 }

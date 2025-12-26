@@ -13,6 +13,14 @@ namespace BondeSpelet
         public int ForestAmmount {  get; set; }
         public int ForestValue { get; set; }
         public int AnimalAmmount { get; set; }
+        public int BoardSpot { get; set; }
+        public bool IsCPU { get; set; }
+
+        public Player(string name, bool isCpu, int farmLevel = 1, int balance = 200000, int insuranceLevel = 1, int forestAmmount = 0, int forestValue = 0, int animalAmmount = 0, int boardspot = 0)
+        {
+            this.Name = name;
+            this.IsCPU = isCpu;
+        } 
 
         void CreateRealPlayer()
         {
